@@ -1,0 +1,38 @@
+int LED = 13;
+void setup() {
+  // put your setup code here, to run once:
+
+pinMode(LED, OUTPUT);
+}
+void loop() {
+//three short
+int i;
+for (i=1; i <=3; i++) 
+{
+  digitalWrite(LED,HIGH);
+  delay(500);
+  digitalWrite(LED,LOW);
+  delay(1000);
+}
+
+//three long
+for (i=1; i <=3; i++) 
+{
+digitalWrite(LED,HIGH);
+delay(1000);
+digitalWrite(LED,LOW);
+delay(1000);
+}
+
+//three short
+for (i=1; i <=3; i++) 
+{
+digitalWrite(LED,HIGH);
+delay(500);
+digitalWrite(LED,LOW);
+delay(1000);
+}
+
+//delay to denote end/start of transmission.
+delay(2000);
+}
