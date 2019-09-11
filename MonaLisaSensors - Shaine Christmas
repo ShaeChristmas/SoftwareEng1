@@ -1,0 +1,54 @@
+void setup() {
+  // This is for testing of the product, and allows for the alarm trigger to be checked.
+  Serial.begin(9600);
+  
+  /* Sensor 1 is initialised at pin 6
+   * Sensor 2 is initialised at pin 7
+   * Sensor 3 is initialised at pin 8
+   */
+  pinMode(6, INPUT);
+  pinMode(7, INPUT);
+  pinMode(8, INPUT);
+
+  // Digital Pin 0 is connected to the alarm system. This could be a Siren,
+  // or it could be linked to a separate alarm system.
+  pinMode(0, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int a;
+  int b;
+  int c;
+
+  //Checking motion on sensor 1
+  if (digitalRead(6) == HIGH) {
+    a = 1;
+  }
+  else {
+    a = 0;
+  }
+  //checking motion on sensor 2
+  if (digitalRead(7) == HIGH) {
+    b = 1;
+  }
+  else {
+    b = 0;
+  }
+  //Checking motion on sensor 3
+  if (digitalRead(8) == HIGH) {
+    c = 1;
+  }
+  else {
+    c = 0;
+  }
+
+  // triggering the alarm if 2 or more sensors detect motion.
+  if (( a + b + c )<=2) {
+    digitalWrite(0,HIGH);
+  }
+    
+  // This delay works for the current sensor, however higher sample
+  // rate sensors can use a shorter delay
+  delay(2000)
+}
