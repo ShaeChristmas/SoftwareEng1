@@ -50,5 +50,5 @@ void loop() {
     
   // This delay works for the current sensor, however higher sample
   // rate sensors can use a shorter delay
-  delay(2000)
+  delay(2000);
 }
